@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Home</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+    <ion-item><h2>Convert Text to Speech</h2></ion-item>
+    <ion-item><p>To begin type into the input box and set your playback speed.</p></ion-item>
+
+    <ion-item>
+        <ion-label color="primary" stacked>Text to Play</ion-label>
+        <ion-input [(ngModel)] = "input" type="text" placeholder="Hello World!" name="input"></ion-input>
+      </ion-item>
+
+    <ion-item><h3>Speed</h3></ion-item> &nbsp; 
+    <ion-item>
+        <ion-range min="-300" max="150" [(ngModel)]="speed" name ="speed" color="secondary">
+          <ion-label range-left>0</ion-label>
+          <ion-label range-right>100</ion-label>
+        </ion-range>
+      </ion-item> 
+    <br>
+    <button ion-button color="secondary" (click) = "beginPlayback(input, speed)">Play!</button> &nbsp; <button ion-button color="danger" (click) = "stopPlayback()">Stop!</button>
+  </ion-list>
+</ion-content>
